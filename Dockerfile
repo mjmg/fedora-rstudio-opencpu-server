@@ -64,7 +64,7 @@ EXPOSE 8004
 EXPOSE 9001
 
 COPY \
-  supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+  supervisor.conf /etc/supervisor/conf.d/supervisor.conf
   
 # Define default command.
-CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisor.conf"]
