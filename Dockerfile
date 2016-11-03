@@ -61,6 +61,7 @@ RUN \
 EXPOSE 80
 EXPOSE 443
 EXPOSE 8004
+EXPOSE 9001
 
 COPY \
   supervisord.conf /etc/supervisor/conf.d/supervisord.conf
