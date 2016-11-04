@@ -59,8 +59,10 @@ EXPOSE 8004
 EXPOSE 9001
 
 ADD \
-  rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf && \
-  opencpu.conf /etc/supervisor/conf.d/opencpu.conf && \
+  rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf
+ADD \
+  opencpu.conf /etc/supervisor/conf.d/opencpu.conf 
+ADD \  
   supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
   
 # Define default command.
