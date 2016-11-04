@@ -51,7 +51,8 @@ RUN \
 # Add default rstudio user with pass rstudio
 RUN \
   useradd rstudio && \
-  echo "rstudio:rstudio" | chpasswd  
+  echo "rstudio:rstudio" | chpasswd && \ 
+  chmod -R +r /home/rstudio
   
 # Apache ports
 EXPOSE 80
