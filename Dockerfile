@@ -71,7 +71,7 @@ ADD \
 ADD \ 
   installpackages.sh /usr/local/bin/installpackages.sh
 RUN \
-  chmod u+x /usr/local/bin/installpackages.sh
+  chmod u+x /usr/local/bin/installpackages.sh && \
   /usr/local/bin/installpackages.sh
   
 # Define default command.
