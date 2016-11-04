@@ -64,7 +64,9 @@ EXPOSE 8004
 EXPOSE 9001
 
 COPY \
-  supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+  rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf && \
+  opencpu.conf /etc/supervisor/conf.d/opencpu.conf && \
+  supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
   
 # Define default command.
-CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisor.conf"]
+CMD ["/usr/bin/supervisord","-c","/etc/supervisor.conf"]
