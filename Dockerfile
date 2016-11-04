@@ -47,7 +47,8 @@ RUN \
   rm -rf /home/builder/* && \
   userdel builder && \
   dnf autoremove -y
-  
+
+# Add default rstudio user with pass rstudio
 RUN \
   useradd rstudio && \
   echo "rstudio:rstudio" | chpasswd  
@@ -58,12 +59,20 @@ EXPOSE 443
 EXPOSE 8004
 EXPOSE 9001
 
+# Add supervisor conf files
 ADD \
   rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf
 ADD \
   opencpu.conf /etc/supervisor/conf.d/opencpu.conf 
 ADD \  
   supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
+
+# install additional packages
+ADD \ 
+  installpackages.sh /usr/local/bin/installpackages.sh
+RUN \
+  chmod u+x /usr/local/bin/installpackages.sh
+  /usr/local/bin/installpackages.sh
   
 # Define default command.
 CMD ["/usr/bin/supervisord","-c","/etc/supervisor.conf"]
