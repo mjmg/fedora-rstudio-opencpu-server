@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This installs R packages in CRAN
-Rscript -e "install.packages('ggplot')"
+Rscript -e "install.packages('ggplot2')"
 
 # This installs R packages from github
 Rscript -e "library(devtools); install_github('dplyr', 'hadley')"
