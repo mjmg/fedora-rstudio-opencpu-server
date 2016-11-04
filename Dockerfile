@@ -58,7 +58,7 @@ EXPOSE 443
 EXPOSE 8004
 EXPOSE 9001
 
-COPY \
+ADD \
   rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf && \
   opencpu.conf /etc/supervisor/conf.d/opencpu.conf && \
   supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
