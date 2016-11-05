@@ -60,6 +60,8 @@ EXPOSE 443
 EXPOSE 8004
 EXPOSE 9001
 
+USER root
+
 # Add supervisor conf files
 ADD \
   rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf
@@ -72,7 +74,7 @@ ADD \
 ADD \ 
   installpackages.sh /usr/local/bin/installpackages.sh
 RUN \
-  chmod u+x /usr/local/bin/installpackages.sh && \
+  chmod +x /usr/local/bin/installpackages.sh && \
   /usr/local/bin/installpackages.sh
   
 # Define default command.
