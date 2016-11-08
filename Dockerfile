@@ -1,7 +1,7 @@
 FROM mjmg/fedora-r-base:latest
 
 RUN \ 
-  dnf install -y 'dnf-command(builddep)' rpmdevtools make R-devel httpd-devel libapreq2-devel libcurl-devel protobuf-devel openssl-devel libpng-devel libtiff-devel libjpeg-turbo-devel fftw-devel netcdf-devel && \
+  dnf install -y 'dnf-command(builddep)' rpmdevtools make R-devel httpd-devel libapreq2-devel libcurl-devel protobuf-devel openssl-devel  && \
   wget http://download.opensuse.org/repositories/home:/jeroenooms:/opencpu-1.6/Fedora_23/src/rapache-1.2.7-2.1.src.rpm && \ 
   wget http://download.opensuse.org/repositories/home:/jeroenooms:/opencpu-1.6/Fedora_23/src/opencpu-1.6.2-7.1.src.rpm && \ 
   dnf builddep -y --nogpgcheck rapache-1.2.7-2.1.src.rpm && \
@@ -69,6 +69,11 @@ ADD \
   opencpu.conf /etc/supervisor/conf.d/opencpu.conf 
 ADD \  
   supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
+
+#install additional tools and library prerequisites for additional packages
+RUN \
+  dnf install -y libpng-devel libtiff-devel libjpeg-turbo-devel fftw-devel netcdf-devel \
+    libxml2-devel cairo-devel libXt-devel NLopt-devel
 
 # install additional packages
 ADD \ 
