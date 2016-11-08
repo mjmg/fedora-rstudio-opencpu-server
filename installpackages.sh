@@ -5,7 +5,7 @@ echo "Installing ggplot2 from CRAN"
 Rscript -e "install.packages('ggplot2')"
 
 # This installs R packages from github
-echo "Installing dplyr and hadley from github"
+echo "Installing hadley/dplyr from github"
 Rscript -e "library(devtools); install_github('dplyr', 'hadley')"
 
 # This installs opencpu webapps from github
@@ -18,4 +18,6 @@ Rscript -e "library(devtools); install_github('qitools/charts')"
 
 # This installs R packages under Bioconductor
 echo "Installing EBImage from Bioconductor"
+Rscript -e "source('https://bioconductor.org/biocLite.R'); biocLite('BiocStyle')"
 Rscript -e "source('https://bioconductor.org/biocLite.R'); biocLite('EBImage')"
+
