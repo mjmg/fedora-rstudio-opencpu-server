@@ -67,8 +67,6 @@ ADD \
   rstudio-server.conf /etc/supervisor/conf.d/rstudio-server.conf
 ADD \
   opencpu.conf /etc/supervisor/conf.d/opencpu.conf 
-ADD \  
-  supervisor-server.conf /etc/supervisor/conf.d/supervisor-server.conf
 
 #install additional tools and library prerequisites for additional packages
 RUN \
