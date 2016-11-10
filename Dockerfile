@@ -50,6 +50,10 @@ RUN \
   userdel builder && \
   dnf autoremove -y
 
+# Add default root password with password r00tpassw0rd
+RUN \
+  echo "root:r00tpassw0rd" | chpasswd
+
 # Add default rstudio user with pass rstudio
 RUN \
   useradd rstudio && \
