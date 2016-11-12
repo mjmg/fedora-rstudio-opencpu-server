@@ -41,7 +41,7 @@ RUN \
   dnf install -y --nogpgcheck rapache-*.rpm opencpu-lib-*.rpm opencpu-server-*.rpm
 
 RUN \
-  wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.0.44-x86_64.rpm && \
+  wget https://download2.rstudio.org/rstudio-server-rhel-1.0.44-x86_64.rpm && \
   dnf install -y --nogpgcheck rstudio-server-rhel-1.0.44-x86_64.rpm 
 
 # Cleanup
